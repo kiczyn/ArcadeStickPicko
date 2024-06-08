@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(22, 22, 56);
+        }
+  #popup {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    visibility:hidden;
+    top:0%;
+    left:25%;
+    display:none;
+    background-color: rgba(22,22,22,0.5);
+  }
+  #popup:target {
+    visibility: visible;
+    display: grid;
+}
+#modal {
+    background: rgb(5, 69, 129);; 
+    margin: 0 auto;
+    width:30vw;
+    height: 70%; 
+    position:relative; 
+    
+    top: 15%;
+    padding:30px; 
+    -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4);
+    -moz-box-shadow:0 0 10px rgba(0,0,0,0.4); 
+    box-shadow:0 0 10px rgba(0,0,0,0.4);
+    display: grid;
+    align-items: center;
+    
+}
+  button{
+    width: 10vw;
+    height: 7vh;
+    font-size: x-large;
+    overflow: hidden;
+    background-color: rgb(0, 194, 178);
+    
+  }
+  .zwykle{
+    display: inline-flex;
+    align-items: flex-end;
+    margin-left:5vw;
+    margin-right: 5vw;
+  }
+  .goradol{
+    display:inline-grid
+  }
+  .przyciski{
+    display: inline-grid;
+    
+  }
+  
+  .button_kontroler{
+    margin:15px;
+    border-radius: 50%;
+    height: 10vh;
+    width: 10vh;
+  }
+  .button_kontroler_kierunkowy{
+    margin:15px;
+  }
+  
+  .numery{
+    margin-left: 20vw;
+  }
+  #kontener{
+    padding-top: 25vh;
+    padding-bottom: 10vh;
+    border-style: solid ;
+    border-color: cyan;
+    border-width: 2vh;
+    border-radius: 75px;
+    background-color: rgb(5, 69, 129);
+  }
+  .zapisz{
+    
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+  }
+  #zapisz_label{
+    width: 100%;
+  }
+</style>
+
+<body>
+  <div id="kontener">
+    <div>
+    <div>
+      <div class="zwykle">
+      <div class="przyciski">
+        
+        <button class="button_kontroler_kierunkowy" id="button_left" onclick="pokaz_popup(this.id)"><label id="label_left" ></label>&nbsp</button>
+      </div>
+    <div class="goradol">
+      <div  class="przyciski">
+    
+    <button class="button_kontroler_kierunkowy" id="button_up" onclick="pokaz_popup(this.id)"><label id="label_up" ></label>&nbsp</button>
+  </div>
+  <div  class="przyciski">
+     
+    <button class="button_kontroler_kierunkowy"id="button_down" onclick="pokaz_popup(this.id)"><label id="label_down" ></label>&nbsp</button>
+   
+  </div>
+</div>
+  
+  <div  class="przyciski">
+    
+    <button class="button_kontroler_kierunkowy" id="button_right" onclick="pokaz_popup(this.id)"><label id="label_right" ></label>&nbsp</button>
+  </div>
+  <div class="numery">
+  <div  class="przyciski">
+    
+    <button class="button_kontroler" id="button_1" onclick="pokaz_popup(this.id)"><label id="label_1" ></label>&nbsp</button>
+  </div>
+  <div  class="przyciski">
+   
+    <button class="button_kontroler" id="button_2" onclick="pokaz_popup(this.id)"> <label id="label_2" ></label>&nbsp</button>
+  </div>
+  <div class="przyciski">
+    
+    <button class="button_kontroler" id="button_3" onclick="pokaz_popup(this.id)"><label id="label_3" ></label>&nbsp</button>
+  </div>
+  <div class="dol">
+  <div class="przyciski">
+    
+    <button class="button_kontroler" id="button_4" onclick="pokaz_popup(this.id)"><label id="label_4" ></label>&nbsp</button>
+  </div>
+  <div class="przyciski">
+    
+    <button class="button_kontroler" id="button_5" onclick="pokaz_popup(this.id)"><label id="label_5" ></label>&nbsp</button>
+  </div>
+  <div class="przyciski">
+    
+    <button class="button_kontroler" id="button_6" onclick="pokaz_popup(this.id)"><label id="label_6" ></label>&nbsp</button>
+  </div>
+</div>
+</div>
+</div>
+    
+  </div>
+  
+  <div id="popup">
+    <div id="modal">
+    <select size="50" id="select_id">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+      <option>E</option>
+      <option>F</option>
+      <option>G</option>
+      <option>H</option>
+      <option>I</option>
+      <option>J</option>
+      <option>K</option>
+      <option>L</option>
+      <option>M</option>
+      <option>N</option>
+      <option>O</option>
+      <option>P</option>
+      <option>Q</option>
+      <option>R</option>
+      <option>S</option>
+      <option>T</option>
+      <option>U</option>
+      <option>V</option>
+      <option>W</option>
+      <option>X</option>
+      <option>Y</option>
+      <option>Z</option>
+      <option>ONE</option>
+      <option>TWO</option>
+      <option>THREE</option>
+      <option>FOUR</option>
+      <option>FIVE</option>
+      <option>SIX</option>
+      <option>SEVEN</option>
+      <option>EIGHT</option>
+      <option>NINE</option>
+      <option>ZERO</option>
+      <option>ENTER</option>
+      <option>RETURN</option>
+      <option>ESCAPE</option>
+      <option>BACKSPACE</option>
+      <option>TAB</option>
+      <option>SPACEBAR</option>
+      <option>SPACE</option>
+      <option>MINUS</option>
+      <option>EQUALS</option>
+      <option>LEFT_BRACKET</option>
+      <option>RIGHT_BRACKET</option>
+      <option>BACKSLASH</option>
+      <option>POUND</option>
+      <option>SEMICOLON</option>
+      <option>QUOTE</option>
+      <option>GRAVE_ACCENT</option>
+      <option>COMMA</option>
+      <option>PERIOD</option>
+      <option>FORWARD_SLASH</option>
+      <option>CAPS_LOCK</option>
+      <option>F1</option>
+      <option>F2</option>
+      <option>F3</option>
+      <option>F4</option>
+      <option>F5</option>
+      <option>F6</option>
+      <option>F7</option>
+      <option>F8</option>
+      <option>F9</option>
+      <option>F10</option>
+      <option>F11</option>
+      <option>F12</option>
+      <option>PRINT_SCREEN</option>
+      <option>SCROLL_LOCK</option>
+      <option>PAUSE</option>
+      <option>INSERT</option>
+      <option>HOME</option>
+      <option>PAGE_UP</option>
+      <option>DELETE</option>
+      <option>END</option>
+      <option>PAGE_DOWN</option>
+      <option>RIGHT_ARROW</option>
+      <option>LEFT_ARROW</option>
+      <option>DOWN_ARROW</option>
+      <option>UP_ARROW</option>
+      <option>KEYPAD_NUMLOCK</option>
+      <option>KEYPAD_FORWARD_SLASH</option>
+      <option>KEYPAD_ASTERISK</option>
+      <option>KEYPAD_MINUS</option>
+      <option>KEYPAD_PLUS</option>
+      <option>KEYPAD_ENTER</option>
+      <option>KEYPAD_ONE</option>
+      <option>KEYPAD_TWO</option>
+      <option>KEYPAD_THREE</option>
+      <option>KEYPAD_FOUR</option>
+      <option>KEYPAD_FIVE</option>
+      <option>KEYPAD_SIX</option>
+      <option>KEYPAD_SEVEN</option>
+      <option>KEYPAD_EIGHT</option>
+      <option>KEYPAD_NINE</option>
+      <option>KEYPAD_ZERO</option>
+      <option>KEYPAD_PERIOD</option>
+      <option>KEYPAD_BACKSLASH</option>
+      <option>APPLICATION</option>
+      <option>POWER</option>
+      <option>KEYPAD_EQUALS</option>
+      <option>F13</option>
+      <option>F14</option>
+      <option>F15</option>
+      <option>F16</option>
+      <option>F17</option>
+      <option>F18</option>
+      <option>F19</option>
+      <option>F20</option>
+      <option>F21</option>
+      <option>F22</option>
+      <option>F23</option>
+      <option>F24</option>
+      <option>LEFT_CONTROL</option>
+      <option>CONTROL</option>
+      <option>LEFT_SHIFT</option>
+      <option>SHIFT</option>
+      <option>LEFT_ALT</option>
+      <option>ALT</option>
+      <option>OPTION</option>
+      <option>LEFT_GUI</option>
+      <option>GUI</option>
+      <option>WINDOWS</option>
+      <option>COMMAND</option>
+      <option>RIGHT_CONTROL</option>
+      <option>RIGHT_SHIFT</option>
+      <option>RIGHT_ALT</option>
+      <option>RIGHT_GUI</option>
+  </select>
+  <label id="target"></label>
+  <button id="zapisz_label" onclick="setLabel()">zapisz</button>
+</div>
+</div>
+</div>
+</div>
+<button onclick="saveFile()" class="zapisz" >Prześlij ustawienia do kontrolera</button>
+    <script>
+        const setData=()=>{
+          let button_up=(document.getElementById("label_up").innerHTML?document.getElementById("label_up").innerHTML:"UP_ARROW")
+          let button_down=(document.getElementById("label_down").innerHTML?document.getElementById("label_down").innerHTML:"DOWN_ARROW")
+          let button_left=(document.getElementById("label_left").innerHTML?document.getElementById("label_left").innerHTML:"LEFT_ARROW")
+          let button_right=(document.getElementById("label_right").innerHTML?document.getElementById("label_right").innerHTML:"RIGHT_ARROW")
+          let button_1=(document.getElementById("label_1").innerHTML?document.getElementById("label_1").innerHTML:"Q")
+          let button_2=(document.getElementById("label_2").innerHTML?document.getElementById("label_2").innerHTML:"W")
+          let button_3=(document.getElementById("label_3").innerHTML?document.getElementById("label_3").innerHTML:"E")
+          let button_4=(document.getElementById("label_4").innerHTML?document.getElementById("label_4").innerHTML:"R")
+          let button_5=(document.getElementById("label_5").innerHTML?document.getElementById("label_5").innerHTML:"D")
+          let button_6=(document.getElementById("label_6").innerHTML?document.getElementById("label_6").innerHTML:"F")
+          let data='import usb_hid \nfrom adafruit_hid.keyboard import Keyboard\nfrom adafruit_hid.keycode import Keycode\nkeymap = ( Keycode.'+(button_up)+', Keycode.'+button_down+',  Keycode.'+button_left+', Keycode.'+button_right+', Keycode.'+button_1+',Keycode.'+button_2+', Keycode.'+button_3+',Keycode.'+button_4+', Keycode.'+button_5+', Keycode.'+button_6+')\ndef keycode(kod):\n\treturn keymap[kod]'
+          console.log(data)
+          return data;
+        }
+       
+        const saveFile =  () => {
+          const a = document.createElement('a');
+          let data=setData();
+          const blob = new Blob([data], {type : 'text/x-python'});
+          a.download = 'bindy.py';
+          a.href = URL.createObjectURL(blob);
+          a.addEventListener('click', (e) => {
+            setTimeout(() => URL.revokeObjectURL(a.href), 30 * 1000);
+          });
+          
+          a.click();
+          console.log("xd")
+          
+        };
+        const pokaz_popup=(button_id)=>{
+            let popup=document.getElementById("popup");
+            popup.style.display="grid";
+            popup.style.visibility="visible"
+            document.getElementById("target").innerHTML=button_id;
+        }
+        const setLabel=()=>{
+          let tekst= document.getElementById("target").innerHTML.replace("button","label")
+          let lista=document.getElementById("select_id");
+          document.getElementById(tekst).innerHTML=lista.options[lista.selectedIndex].value;
+          document.getElementById("popup").style.display="none"
+
+        }
+
+   </script>
+</body>
+</html>
